@@ -26,8 +26,8 @@
 
     service.discoverMovie = function () {
       return httpService.get('/3/discover/movie', {
-        'release_date.lte', moment().add(3, 'months').format('YYYY-MM-DD'),
-        'release_date.gte', moment().format('YYYY-MM-DD'),
+        'release_date.lte': moment().add(3, 'months').format('YYYY-MM-DD'),
+        'release_date.gte': moment().format('YYYY-MM-DD'),
         language: i18nService.getLocale(),
         api_key: API_KEY
       }).then(function (data) {
@@ -52,7 +52,7 @@
     'httpService',
     'i18nService',
     'API_IMAGES_URL',
-    'API_KEY'
+    'API_KEY',
     StatesService
   ]);
 

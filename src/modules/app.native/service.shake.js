@@ -1,7 +1,7 @@
 (function (module) {
   'use strict';
 
-  function shakeService($q, $window, cordovaUtils) {
+  function ShakeService($q, $window, cordovaUtils) {
     var service = this;
 
     service.listen = cordovaUtils.whenReady(function (callback) {
