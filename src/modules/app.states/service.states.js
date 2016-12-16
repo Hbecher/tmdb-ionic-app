@@ -8,14 +8,20 @@
     var service = this;
 
     service.search = function (query) {
-      return $q.resolve([
-          { title: 'Tentative', id: 1 },
-          { title: 'Testation', id: 2 }
-        ]);
+      return httpService.get('/3/search/movie', {
+        language: i18nService.getLocale(),
+        api_key: API_KEY,
+        query: query
+      }).then(function (data) {
+        return data.results;
+      });
     };
 
     service.getMovie = function(id) {
-      return $q.resolve({ title: 'Test', id: id });
+      return httpService.get('/3/movie' + id, {
+        language: i18nService.getLocale(),
+        api_key: API_KEY
+      });
     }
 
     /**
